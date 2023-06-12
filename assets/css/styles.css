@@ -1,0 +1,607 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #290b05;
+    grid-area: header;
+  }
+  
+  nav{
+    grid-area: nav;
+    background-color:  navajowhite;
+  }
+  
+  main {
+    background-color: darkslategrey;
+    grid-area: main;
+    overflow-x: auto;  
+  }
+  footer {
+    grid-area: footer;
+    text-align: center;
+    color: antiquewhite;
+    background-color: #111;
+  }
+  
+  .grid-container {
+    display: grid;
+    height: 100vh;
+      grid-template-columns: 12% auto;    
+    grid-template-areas:
+      "header header"
+      "nav main"
+      "footer footer";
+        
+  }
+  .social-links,
+    .flex-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .social-btn {
+      cursor: pointer;
+      height: 50px;
+      width: 50px;
+      font-family: "Titillium Web", sans-serif;
+      color: #333;
+      border-radius: 10px;
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+      background: white;
+      margin: 5px;
+      transition: 0.3s;
+      justify-content: center;
+    }
+  
+    .social-btn svg {
+      height: 24px;
+      width: 24px;
+    }
+  
+    .social-btn span {
+      width: 0px;
+      overflow: hidden;
+      transition: 0.3s;
+      text-align: center;
+      margin-left: 5px;
+    }
+  
+    .social-btn:hover {
+      width: 150px;
+      border-radius: 5px;
+    }
+  
+    .social-btn:hover span {
+      padding: 2px;
+      width: 80px;
+    }
+  
+    #twitter svg {
+      fill: #1da1f2;
+    }
+  
+    #linkedin svg {
+      fill: #0e76a8;
+    }
+  
+    #github {
+      fill: #333;
+    }
+  
+    .icon-btn {
+      width: 50px;
+      height: 50px;
+      border: 1px solid #cdcdcd;
+      background: white;
+      border-radius: 25px;
+      overflow: hidden;
+      position: relative;
+      transition: width 0.2s ease-in-out;
+      font-weight: 500;
+      font-family: inherit;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .add-btn:hover {
+      width: 120px;
+    }
+  
+    .add-btn::before,
+    .add-btn::after {
+      transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+      content: "";
+      position: absolute;
+      height: 4px;
+      width: 10px;
+      top: calc(50% - 2px);
+      background: seagreen;
+    }
+  
+    .add-btn::after {
+      right: 14px;
+      overflow: hidden;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
+  
+    .add-btn::before {
+      left: 14px;
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+  
+    .icon-btn:focus {
+      outline: none;
+    }
+  
+    .btn-txt {
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+  
+    .add-btn:hover::before,
+    .add-btn:hover::after {
+      width: 4px;
+      border-radius: 2px;
+    }
+  
+    .add-btn:hover .btn-txt {
+      opacity: 1;
+    }
+  
+    .add-icon::after,
+    .add-icon::before {
+      transition: all 0.2s ease-in-out;
+      content: "";
+      position: absolute;
+      height: 20px;
+      width: 2px;
+      top: calc(50% - 10px);
+      background: seagreen;
+      overflow: hidden;
+    }
+  
+    .add-icon::before {
+      left: 22px;
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+  
+    .add-icon::after {
+      right: 22px;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
+  
+    .add-btn:hover .add-icon::before {
+      left: 15px;
+      height: 4px;
+      top: calc(50% - 2px);
+    }
+  
+    .add-btn:hover .add-icon::after {
+      right: 15px;
+      height: 4px;
+      top: calc(50% - 2px);
+    }
+  
+  
+  .cajanav{
+    box-sizing: border-box;
+    object-fit: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+  }
+  
+  .logomarca {
+    width: 100%;
+    height: 8rem;
+    background-color: antiquewhite;
+    margin-bottom: 1rem;
+    display: flex; 
+    position: relative;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .logoimg {
+    height: 54%;
+    width: 32%;
+    display: flex;
+    margin-right: 5rem;
+    position: relative;
+  }
+  
+  .logoimg:hover {
+    animation: mover 3s infinite linear;
+  }
+  
+  @keyframes mover {
+    0% {
+        left: 0;
+    }
+    25% {
+        left: 20%;
+    }
+    50% {
+        left: 45%;
+    }
+    75% {
+      left: 55%;
+    }
+    75% {
+      left: 65%;
+    }
+   
+  }
+  
+  .listanav{
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  }
+  
+  .listanav ul{
+    margin-bottom: 3rem;
+    margin-bottom: 3rem;
+    list-style-type: square;    
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  .item {
+    display: grid;   
+    height: 29rem; 
+    text-align: center;   
+  }
+
+  
+  
+  .productos {
+    height: 90vh;
+    width: 100%;
+    gap: 2px;
+    display: grid;
+    color: white;
+  }
+  
+  .productos h2 {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border: #0e76a8 solid 3px;
+    background-color: midnightblue;   
+    justify-content: center;    
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  
+  
+  .infoproducto {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+      
+  }
+  
+  .contenedor2{
+display: flex;
+  }
+
+  .item2{
+    height: 34rem;;
+  }
+  .infoproducto2{
+    height: 44%;
+    width: 24rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;    
+    border-radius: 25px;
+    padding: 5px;    
+  }
+
+  .infoproducto3{
+    height: 44%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 55px;
+}    
+  
+
+
+  .infoTxt{
+    background-color: white;
+    color: red;
+  }
+
+  .imgproducto {
+    position: relative;
+    display: inline-block;
+    height: 12rem;
+    width: 20rem;
+  }
+
+  .imgproducto2{
+    height: 12rem;
+    width: 24rem;
+  }
+  .proyect2{
+    height: 10rem;
+    width: 10rem;
+    background-color: white;
+  }
+  .imgproducto img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+  }
+  
+  #infoTxt{
+    text-align: center;
+    font-size: x-large;
+    background-color: black;
+  }
+
+  #infoTxt2{
+    text-align: center;
+    font-size: x-large;
+    background-color: black; 
+  }
+
+  .resulbtn{
+    display: flex;
+    flex-direction: column;
+    width: 70rem;
+    align-items: center;
+  }
+
+  .resumenproducto {
+    margin-top: 1rem;
+    height: 35%;
+    padding: 1rem;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+  }
+  
+  
+  .card-img1 {
+    height: 100%;
+    width: 100%;
+   
+    transition: filter 0.3s ease;
+    background-color: white;
+    border-radius: 15px;
+  } 
+  
+  .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button-wrapper,
+  .text,
+  .icon {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    color: #fff;
+  }
+  
+  .text {
+    top: 0;
+  }
+  
+  .text,
+  .icon {
+    transition: top 0.5s;
+  }
+  
+  .icon {
+    color: #fff;
+    top: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .button:hover {
+    background: #222;
+  }
+  
+  .button:hover .text {
+    top: -100%;
+  }
+  
+  .button:hover .icon {
+    top: 0;
+  }
+  
+  .button:hover:before,
+  .button:hover:after {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .button:hover:after {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+  }
+  
+  .button:hover:before {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+  }
+  
+  
+  
+  
+  
+  /*  QUERIES PARA MOVIL  */
+  
+  @media (max-width: 767px) {
+  .grid-container{
+    display: grid;
+    grid-template-areas:
+    "header "
+    "nav"
+    "main"
+    "footer";
+    grid-template-columns: auto;
+  }
+  
+  nav{
+    display: flex;
+    flex-direction: column;
+    }
+  
+  .cajanav{
+    display: flex;
+    /* flex-direction: column; */
+    height: 11rem;
+    align-items: flex-start;
+  
+  }
+  .listanav{
+    display: flex;
+      flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+  }
+  
+  .logomarca{
+    width: 100%;
+    height: 3rem;
+    position: relative;
+    display: inline-block;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .textologo{
+    position: absolute;
+    top: 0;
+    left: 0;  
+    padding: 10px;
+    z-index: 0; /* Coloca el texto detrás de la imagen */
+  }
+  .textologo h2{
+    -webkit-text-stroke-width: thick;
+  }
+  
+  .logoimg{
+    height: 3rem;
+    width: 4rem;
+    animation: mover 3s infinite linear;
+  }
+  
+  @keyframes mover {
+    0% {
+        left: 0;
+    }
+    25% {
+        left: 20%;
+    }
+    50% {
+        left: 45%;
+    }
+    75% {
+      left: 55%;
+    }
+    75% {
+      left: 65%;
+    }
+   
+  }
+  
+  .lista ul{
+    justify-content: center;
+  
+  }
+  
+  .listanav1{
+    margin-top: -15px;
+  }
+  
+  .listanav2{
+    margin-top: -15px;
+  }
+  
+  .listanav1 ul{
+    margin-top: -9px;
+  }
+  
+  .listanav2 ul{
+    margin-top: -9px;
+  }
+  
+  .icon-btn {
+    display: none;
+  }
+  
+  main{  
+    overflow-y: auto;
+  }
+  
+  .productos{
+    width: 100%;
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .item{
+    display: grid;
+    grid-template-columns: auto;
+    height: 89rem;
+    gap: 2rem;
+    margin-left: 0rem;
+    justify-items: center;
+    margin-bottom: 3rem;
+  }
+  
+  .infoproducto{
+    width: 95%;
+    height: 28rem;
+    padding: 5px;
+  
+  }
+
+
+  
+  
+  .imgproducto{
+    height: 40%;
+      width: 40%;
+  }
+  
+  .resumenproducto {
+    margin-top: 0rem;
+    height: 50%;
+    
+  
+  }
+  
+  }
